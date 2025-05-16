@@ -42,5 +42,19 @@ services:
     ports:
       - "6379:6379"
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: nuxt-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - app
+    volumes:
+      - ./frontend:/app
+
 volumes:
   db_data:
+    - ./frontend:/app
