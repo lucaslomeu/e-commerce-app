@@ -21,8 +21,10 @@ class ProductRequest extends FormRequest
      */
     public function rules(): array
     {
+        $productId = $this->route('product');
+
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:products,name,' . $productId,
             'price' => 'required|numeric',
             'description' => 'required|string',
             'category' => 'required|string|max:255',
