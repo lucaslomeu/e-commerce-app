@@ -23,7 +23,7 @@ Projeto de E-commerce desenvolvido em duas partes:
 
 ```bash
 git clone https://github.com/lucaslomeu/e-commerce-app.git
-cd seu-projeto-ecommerce
+cd e-commerce-app
 docker-compose up --build
 ```
 
