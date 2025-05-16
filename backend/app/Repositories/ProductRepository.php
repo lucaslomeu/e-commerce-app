@@ -32,6 +32,11 @@ class ProductRepository
         return Product::find($id);
     }
 
+    public function findByName($name)
+    {
+        return Product::where('name', $name)->first();
+    }
+
     public function create(array $data)
     {
         return Product::create($data);

@@ -24,6 +24,11 @@ class ProductService
         return $this->repository->find($id);
     }
 
+    public function showByName($name)
+    {
+        return $this->repository->findByName($name);
+    }
+
     public function create(array $data)
     {
         return $this->repository->create($data);
